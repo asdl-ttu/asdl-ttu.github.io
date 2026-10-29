@@ -1,0 +1,17 @@
+# Research funding, newest first. Each grant starts with "- title:".
+# status: Active | Completed
+- title: Radiation Effects in GaN High-Electron-Mobility Transistors, toward Radiation-Hardness-by-Design
+  agency: National Science Foundation (NSF)
+  amount: $450,000
+  year: 2026
+  status: Active
+  investigators: Taewoo Kim (PI); Ravindra Joshi, ECE Chair (Co-PI)
+  partners: Los Alamos National Laboratory, Ion Beam Materials Laboratory, through the Center for Integrated Nanotechnologies (CINT) user program
+  summary: >-
+    Exposes GaN HEMTs to proton radiation under controlled conditions and tracks changes in their physical and
+    electrical properties. The project links radiation-induced defects to changes in charge transport to build a
+    physics-based, predictive framework for radiation-hardness-by-design, with the goal of cutting device
+    qualification from months of testing to as little as one confirmatory test. Applications include satellite
+    communications, defense radar, deep-space missions and high-power electronics. The project also introduces
+    undergraduate and high-school students to semiconductor and space-technology research.
+  link: https://www.depts.ttu.edu/coe/wcoenews/posts/2026/08/NSF-Award-Kim-Joshi-radiation-hardened-electronics.php

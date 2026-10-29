@@ -1,0 +1,35 @@
+# Facility page cards. Each item starts with "- capability:".
+# icon: one of the names in _data/icons.yml (probe, pulse, transport, traps, noise, rf, model, code, chip, temp ...)
+
+- capability: Temperature-Dependent On-Wafer Probing
+  icon: probe
+  range: 4–1000 K Overall (by Setup)
+  use: DC, pulsed, noise and RF characterization from cryogenic to high temperature
+- capability: DC & High-Voltage Pulsed I–V
+  icon: pulse
+  range: Keysight B1500A with HV-SPGU
+  use: Dynamic on-resistance, quiescent-bias and pulse-width studies, self-heating
+- capability: DC Parameter Analysis
+  icon: transport
+  range: Keysight 4156C
+  use: Output/transfer curves, gate leakage, impact-ionization hole current
+- capability: Current-mode DLTS
+  icon: traps
+  range: Isothermal I-DLTS
+  use: Trap capture/emission kinetics, current collapse and recovery
+- capability: Low-Frequency Noise
+  icon: noise
+  range: SR570 Current Preamp + 35670A Signal Analyzer
+  use: 1/f and G–R noise spectra, trap activation energies
+- capability: RF Small-Signal Measurement
+  icon: rf
+  range: VNA up to 67 GHz
+  use: Calibrated, de-embedded S-parameters; equivalent-circuit extraction
+- capability: Device Modeling
+  icon: model
+  range: Keysight IC-CAP
+  use: ASM-HEMT parameter extraction from DC, pulsed and S-parameter data
+- capability: Circuit Simulation
+  icon: code
+  range: Keysight ADS
+  use: Small-signal models, measured vs. modeled S-parameters

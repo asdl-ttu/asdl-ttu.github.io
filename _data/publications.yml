@@ -1,0 +1,26 @@
+# Publications, newest first. Each entry starts with "- title:".
+#
+# type:    Journal | Conference | Poster | Thesis | Patent
+# authors: write lab members' names exactly as listed in "highlight" below
+#          and they will appear in bold.
+# link:    optional URL (DOI link, PDF, etc.)
+
+highlight:
+  - A. Ray
+  - E. Sadiq
+  - T. Kim
+
+list:
+  - title: Energy- and Fluence-Dependent Proton Irradiation Effects on Carrier Transport and Trap Dynamics in AlGaN/GaN HEMTs
+    authors: A. Ray, E. Sadiq, Biswas, T. Kim
+    venue: Center for Integrated Nanotechnologies (CINT), NSF-supported
+    year: 2026
+    type: Poster
+
+# Example:
+#  - title: Paper title
+#    authors: A. Author, E. Sadiq, T. Kim
+#    venue: IEEE Transactions on Electron Devices, vol. 73, no. 1, pp. 1-6
+#    year: 2027
+#    type: Journal
+#    link: https://doi.org/10.xxxx/xxxxx

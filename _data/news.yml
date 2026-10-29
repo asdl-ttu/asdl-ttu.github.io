@@ -1,0 +1,35 @@
+# Lab news, newest first. The home page shows the first 5.
+# date: any short label, e.g. "2026 · Oct" or "Oct 14, 2026"
+# tag: optional label shown next to the date, e.g. Award, Funding, Publication
+# title: optional headline for the News page (text is used if there is no title)
+# link: optional URL to a full article
+# featured: true  -> also shown as the large highlight box near the top of the home page
+#                    (only the first featured item is used; it also needs title and summary)
+
+- date: 2026 · Fall
+  tag: Presentation
+  title: Proton-Irradiation Results Presented at CINT
+  text: "Poster at CINT: *Energy- and Fluence-Dependent Proton Irradiation Effects on Carrier Transport and Trap Dynamics in AlGaN/GaN HEMTs*."
+
+- date: 2026 · Aug
+  tag: Funding
+  featured: true
+  title: NSF Awards $450,000 to Advance Radiation-Hardened GaN Electronics
+  summary: >-
+    The National Science Foundation has awarded $450,000 to Dr. Taewoo Kim (PI) and Dr. Ravindra Joshi,
+    ECE Chair (co-PI), to study how proton radiation affects GaN high-electron-mobility transistors. Working with
+    Los Alamos National Laboratory's Ion Beam Materials Laboratory through the Center for Integrated
+    Nanotechnologies, the team will link radiation-induced defects to changes in charge transport and build a
+    physics-based framework for radiation-hardness-by-design. The goal is to cut device qualification from months
+    of testing to as little as one confirmatory test, for satellite communications, defense radar, deep-space
+    missions and high-power electronics.
+  quote: Our goal is to move beyond empirical radiation testing and establish a predictive understanding …
+  quote_by: Dr. Taewoo Kim
+  source: Whitacre College of Engineering News, August 20, 2026
+  link: https://www.depts.ttu.edu/coe/wcoenews/posts/2026/08/NSF-Award-Kim-Joshi-radiation-hardened-electronics.php
+  text: "NSF awards $450,000 to Dr. Taewoo Kim and Dr. Ravindra Joshi to advance radiation-hardened GaN electronics, in collaboration with Los Alamos National Laboratory."
+
+- date: 2026 · Aug
+  tag: Lab
+  title: New Students Join ASDL
+  text: New PhD students join the lab for the Fall 2026 semester.

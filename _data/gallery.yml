@@ -1,0 +1,8 @@
+# Photo gallery. Put photos in assets/img/gallery/ and add one entry per photo, e.g.:
+#
+# - file: probe-station.jpg
+#   caption: Cryogenic probe station in Room 252
+#   date: 2026 · Oct
+#
+# Landscape photos (4:3) look best. The page shows a placeholder until the first photo is added.
+[]
