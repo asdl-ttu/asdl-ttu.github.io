@@ -6,6 +6,11 @@
 # featured: true  -> also shown as the large highlight box near the top of the home page
 #                    (only the first featured item is used; it also needs title and summary)
 
+- date: 2026 · Oct
+  tag: Publication
+  title: Avishak Ray's First IEEE Electron Device Letters Paper Accepted
+  text: "Avishak Ray's first IEEE Electron Device Letters paper, *Temperature-Driven Transition From Persistent Trapping to Thermally Enhanced Recovery in GaN HEMTs From 4 to 600 K*, has been accepted for publication. Congratulations, Avishak!"
+
 - date: 2026 · Fall
   tag: Presentation
   title: Proton-Irradiation Results Presented at CINT
