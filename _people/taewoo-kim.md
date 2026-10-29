@@ -9,6 +9,7 @@ bio: Research in InGaAs HEMTs for cryogenic electronics and the reliability of G
 phone: 806.834.5545
 email: taewoo.kim@ttu.edu
 office: ECE 236
+scholar: https://scholar.google.com/citations?hl=en&user=9y2qcTIAAAAJ
 profile: https://www.depts.ttu.edu/ece/faculty/taewoo_kim/index.php
 education:
 - degree: Postdoc
