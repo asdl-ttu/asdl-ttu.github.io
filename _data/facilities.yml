@@ -1,10 +1,14 @@
 # Facility page cards. Each item starts with "- capability:".
 # icon: one of the names in _data/icons.yml (probe, pulse, transport, traps, noise, rf, model, code, chip, temp ...)
 
-- capability: Temperature-Dependent On-Wafer Probing
+- capability: Cryogenic Probe Station
+  icon: temp
+  range: Lake Shore Cryotronics station, Sumitomo F-70 helium compressor, Model 336 temperature controllers
+  use: Closed-cycle on-wafer DC, pulsed, noise and RF characterization from cryogenic temperatures upward
+- capability: Probe Stations
   icon: probe
-  range: 4–1000 K Overall (by Setup)
-  use: DC, pulsed, noise and RF characterization from cryogenic to high temperature
+  range: Cascade Microtech MicroChamber stations with FormFactor DPP210 positioners; TMP vacuum probe chamber
+  use: Shielded on-wafer probing and temperature-controlled measurements up to high temperature
 - capability: DC & High-Voltage Pulsed I–V
   icon: pulse
   range: Keysight B1500A with HV-SPGU
