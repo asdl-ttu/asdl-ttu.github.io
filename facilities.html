@@ -28,3 +28,17 @@ description: Measurement and modeling capabilities of the Advanced Semiconductor
     {% endfor %}
   </div>
 </section>
+
+{% if site.data.gallery.size > 0 %}
+<section aria-labelledby="ph-h">
+  <h2 class="sec-h" id="ph-h">In the Lab</h2>
+  <div class="gallery">
+    {% for g in site.data.gallery %}
+    <figure class="card">
+      <img src="{% if g.file contains '/' %}{{ g.file | relative_url }}{% else %}{{ '/assets/img/gallery/' | append: g.file | relative_url }}{% endif %}" alt="{{ g.caption | escape }}" loading="lazy">
+      <figcaption>{{ g.caption }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
