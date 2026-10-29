@@ -1,0 +1,220 @@
+# Pages CMS editor configuration (https://pagescms.org).
+# Gives lab members a simple form-based editor for their own profile, photos, news and more.
+# Changes saved in the editor are committed to this repository, and GitHub Pages rebuilds the site.
+
+media:
+  - name: people
+    label: Member photos
+    input: assets/img/people
+    output: /assets/img/people
+    extensions: [jpg, jpeg, png, webp]
+  - name: gallery
+    label: Gallery photos
+    input: assets/img/gallery
+    output: /assets/img/gallery
+    extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: people
+    label: Members
+    type: collection
+    path: _people
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: name
+      fields: [name, group, title]
+      sort: order
+      order: asc
+    fields:
+      - name: name
+        label: Full name
+        type: string
+        required: true
+      - name: initials
+        label: Initials (shown when there is no photo)
+        type: string
+      - name: group
+        label: Group
+        type: select
+        required: true
+        options:
+          values:
+            - { value: pi, label: Principal Investigator }
+            - { value: phd, label: PhD Student }
+            - { value: ms, label: MS Student }
+            - { value: undergrad, label: Undergraduate Researcher }
+            - { value: alumni, label: Alumni }
+      - name: order
+        label: Order on the page (smaller numbers appear first)
+        type: number
+      - name: photo
+        label: Photo (portrait; it is cropped to a circle)
+        type: image
+        options:
+          media: people
+      - name: title
+        label: Title / position
+        type: string
+        description: e.g. Graduate Research Assistant, Electrical Engineering (PhD)
+      - name: topic
+        label: Research topic
+        type: text
+      - name: bio
+        label: Short bio
+        type: text
+      - name: room
+        label: Room
+        type: string
+      - name: office
+        label: Office
+        type: string
+      - name: phone
+        label: Phone
+        type: string
+      - name: email
+        label: Email
+        type: string
+      - name: website
+        label: Personal website
+        type: string
+      - name: scholar
+        label: Google Scholar link
+        type: string
+      - name: linkedin
+        label: LinkedIn link
+        type: string
+      - name: profile
+        label: Faculty / profile page
+        type: string
+      - name: education
+        label: Education
+        type: object
+        list: true
+        fields:
+          - { name: degree, label: Degree (e.g. PhD), type: string }
+          - { name: detail, label: Details, type: string }
+      - name: experience
+        label: Professional experience (newest first)
+        type: object
+        list: true
+        fields:
+          - { name: years, label: Years, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: place, label: Place, type: string }
+          - name: type
+            label: Type
+            type: select
+            options:
+              values: [academic, postdoc, industry]
+      - name: teaching
+        label: Teaching
+        type: string
+        list: true
+      - name: courses
+        label: Courses
+        type: object
+        list: true
+        fields:
+          - { name: code, label: Course code, type: string }
+          - { name: name, label: Course title, type: string }
+      - name: awards
+        label: Honors & awards
+        type: string
+        list: true
+      - name: service
+        label: Professional service
+        type: string
+        list: true
+
+  - name: news
+    label: News
+    type: file
+    path: _data/news.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: date, label: Date (e.g. 2026 · Oct), type: string, required: true }
+      - { name: tag, label: Tag (e.g. Award, Funding, Publication), type: string }
+      - { name: title, label: Headline, type: string }
+      - { name: text, label: Short text (home page list), type: text, required: true }
+      - { name: link, label: Link to full story, type: string }
+      - { name: featured, label: Show as the big highlight on the home page, type: boolean }
+      - { name: summary, label: Highlight summary (only for featured), type: text }
+      - { name: quote, label: Highlight quote (optional), type: text }
+      - { name: quote_by, label: Quote by, type: string }
+      - { name: source, label: Source (e.g. College of Engineering News, Aug 20, 2026), type: string }
+
+  - name: publications
+    label: Publications
+    type: file
+    path: _data/publications.yml
+    format: yaml
+    fields:
+      - name: highlight
+        label: Lab member names to show in bold (exactly as written in author lists)
+        type: string
+        list: true
+      - name: list
+        label: Publications (newest first)
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: authors, label: Authors, type: string, required: true }
+          - { name: venue, label: Journal / conference, type: string }
+          - { name: year, label: Year, type: number }
+          - name: type
+            label: Type
+            type: select
+            options:
+              values: [Journal, Conference, Poster, Book Chapter, Patent, Thesis]
+          - { name: link, label: Link (DOI or PDF), type: string }
+
+  - name: grants
+    label: Grants
+    type: file
+    path: _data/grants.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: title, label: Project title, type: string, required: true }
+      - { name: agency, label: Agency, type: string }
+      - { name: amount, label: Amount, type: string }
+      - { name: year, label: Year, type: number }
+      - name: status
+        label: Status
+        type: select
+        options:
+          values: [Active, Completed]
+      - { name: investigators, label: Investigators, type: string }
+      - { name: partners, label: Partners, type: string }
+      - { name: summary, label: Summary, type: text }
+      - { name: link, label: Link, type: string }
+
+  - name: gallery
+    label: Gallery
+    type: file
+    path: _data/gallery.yml
+    format: yaml
+    list: true
+    fields:
+      - name: file
+        label: Photo
+        type: image
+        options:
+          media: gallery
+      - { name: caption, label: Caption, type: string }
+      - { name: date, label: Date, type: string }
+
+  - name: facilities
+    label: Facility
+    type: file
+    path: _data/facilities.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: capability, label: Capability, type: string, required: true }
+      - { name: icon, label: Icon name (probe, pulse, transport, traps, noise, rf, model, code, chip, temp), type: string }
+      - { name: range, label: Instrument / range, type: string }
+      - { name: use, label: Used for, type: text }

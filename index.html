@@ -1,0 +1,78 @@
+---
+layout: default
+title: Home
+permalink: /
+full_width: true
+---
+{% assign icons = site.data.icons %}
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">GaN &amp; InGaAs HEMTs · Transport · Traps · Noise · Modeling</div>
+    <h1>Transistor Physics from 4&nbsp;K to 1000&nbsp;K</h1>
+    <p>We measure high electron mobility transistors from cryogenic to high temperature, uncover the physics that limits them, and build compact models for RF, power, space and quantum electronics.</p>
+    <div class="actions">
+      <a class="btn solid" href="{{ '/research/' | relative_url }}">Enter →</a>
+      <a class="btn ghost" href="{{ '/positions/' | relative_url }}">Join the lab</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap content">
+
+  <section class="card about" aria-labelledby="about-h">
+    <div class="prose">
+      <h2 class="sec-h" id="about-h">About Us</h2>
+      <p class="lede">Led by Dr. Taewoo Kim in the Department of Electrical &amp; Computer Engineering at Texas Tech University, the Advanced Semiconductor Device Laboratory studies how carrier transport, trapping and self-heating govern the performance and stability of GaN and InGaAs high electron mobility transistors (HEMTs).</p>
+      <p>We combine temperature-dependent DC, pulsed, noise and 67&nbsp;GHz RF measurements with physics-based parameter extraction and ASM-HEMT compact modeling, and we study how radiation changes device behavior for space and defense electronics.</p>
+    </div>
+    {% include temperature-span.html %}
+  </section>
+
+  {% assign featured = site.data.news | where: "featured", true | first %}
+  {% if featured %}
+  <article class="card feature" aria-labelledby="feature-title">
+    <div class="feature-tag"><span class="eyebrow">{{ featured.tag | default: "Highlight" }}</span><span class="date">{{ featured.date }}</span></div>
+    <div class="feature-body">
+      <h2 id="feature-title">{{ featured.title }}</h2>
+      <p>{{ featured.summary }}</p>
+      {% if featured.quote %}<blockquote>“{{ featured.quote }}”<cite>— {{ featured.quote_by }}</cite></blockquote>{% endif %}
+      <div class="foot-row">
+        {% if featured.link %}<a class="btn solid" href="{{ featured.link }}">Read the full story</a>{% endif %}
+        {% if featured.source %}<span class="muted">{{ featured.source }}</span>{% endif %}
+      </div>
+    </div>
+  </article>
+  {% endif %}
+
+  <section aria-labelledby="thrusts-h">
+    <h2 class="sec-h" id="thrusts-h">Research Thrusts</h2>
+    <div class="grid3">
+      <a class="card topic" href="{{ '/research/' | relative_url }}#transport"><span class="icon">{{ icons.transport }}</span><h3>Carrier Transport</h3><p>Mobility, knee sharpness and saturation velocity from 4 K upward, with gate-length scaling and back-barrier comparisons.</p><div class="spec">μ · γ · v<sub>sat</sub> · TLM</div></a>
+      <a class="card topic" href="{{ '/research/' | relative_url }}#trapping"><span class="icon">{{ icons.traps }}</span><h3>Trapping &amp; Dynamic R<sub>on</sub></h3><p>Capture and emission kinetics, current collapse and recovery, and separating self-heating from trapping.</p><div class="spec">I-DLTS · Pulsed I–V · Quiescent Bias</div></a>
+      <a class="card topic" href="{{ '/research/' | relative_url }}#noise"><span class="icon">{{ icons.noise }}</span><h3>Low-Frequency Noise</h3><p>1/f and G–R noise spectroscopy across temperature to find trap activation energies and build noise models.</p><div class="spec">S<sub>VG</sub> = S<sub>ID</sub>/g<sub>m</sub>² · Arrhenius</div></a>
+      <a class="card topic" href="{{ '/research/' | relative_url }}#radiation"><span class="icon">{{ icons.radiation }}</span><h3>Radiation Effects</h3><p>How proton energy and fluence change carrier transport and trap behavior in GaN HEMTs for space use.</p><div class="spec">Proton Energy (MeV) · Fluence (p/cm²)</div></a>
+      <a class="card topic" href="{{ '/research/' | relative_url }}#cryogenic"><span class="icon">{{ icons.cryo }}</span><h3>Cryogenic Electronics</h3><p>InGaAs and GaN HEMTs for low-noise amplifiers at liquid-helium temperature, including qubit readout.</p><div class="spec">T ≥ 4 K · Noise Figure</div></a>
+      <a class="card topic" href="{{ '/research/' | relative_url }}#modeling"><span class="icon">{{ icons.model }}</span><h3>RF &amp; Compact Modeling</h3><p>67 GHz small-signal analysis and ASM-HEMT models in IC-CAP, validated across bias and temperature.</p><div class="spec">S-parameters · IC-CAP · ADS</div></a>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="news-h">
+    <h2 class="sec-h" id="news-h">Latest News</h2>
+    <div class="newslist">
+      {% for n in site.data.news limit:3 %}
+      <div class="item"><div class="date">{{ n.date }}</div><div>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% if n.link %} <a href="{{ n.link }}">Read more</a>{% endif %}</div></div>
+      {% endfor %}
+    </div>
+    <div class="foot-row" style="margin-top:16px"><a class="btn line" href="{{ '/news/' | relative_url }}">All news →</a></div>
+  </section>
+
+  <section class="card feature" aria-labelledby="join-h">
+    <div class="feature-tag"><span class="eyebrow">Positions</span></div>
+    <div class="feature-body">
+      <h2 id="join-h">Looking for Motivated PhD and MS Students</h2>
+      <p>Background in semiconductor physics, device fabrication, or RF/microwave measurement is a plus.</p>
+      <div class="foot-row"><a class="btn solid" href="{{ '/positions/' | relative_url }}">How to apply</a></div>
+    </div>
+  </section>
+
+</div>

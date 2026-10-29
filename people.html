@@ -1,0 +1,87 @@
+---
+layout: default
+title: Members
+heading: Our Team
+permalink: /members/
+intro: The researchers and students of the Advanced Semiconductor Device Laboratory.
+description: Principal investigator, graduate students and alumni of the Advanced Semiconductor Device Laboratory at Texas Tech.
+---
+{% assign members = site.people | sort: "order" %}
+
+<section aria-labelledby="pi-h">
+  <h2 class="sec-h" id="pi-h">Principal Investigator</h2>
+  {% assign pis = members | where: "group", "pi" %}
+  {% for p in pis %}
+  <article class="card pi-card">
+    <div class="pi-top">
+      <div class="avatar">{% if p.photo %}<img src="{% if p.photo contains '/' %}{{ p.photo | relative_url }}{% else %}{{ '/assets/img/people/' | append: p.photo | relative_url }}{% endif %}" alt="{{ p.name }}">{% else %}<span aria-hidden="true">{{ p.initials }}</span>{% endif %}</div>
+      <div class="prose">
+        <h3>{{ p.name }}</h3>
+        {% if p.title %}<div class="role">{{ p.title }}</div>{% endif %}
+        {% if p.bio %}<p>{{ p.bio }}</p>{% endif %}
+        <dl class="meta">
+          {% for ed in p.education %}<dt>{{ ed.degree }}</dt><dd>{{ ed.detail }}</dd>{% endfor %}
+          {% if p.office %}<dt>Office</dt><dd>{{ p.office }}</dd>{% endif %}
+          {% if p.email %}<dt>Email</dt><dd><a href="mailto:{{ p.email }}">{{ p.email }}</a></dd>{% endif %}
+          {% if p.profile %}<dt>Profile</dt><dd><a href="{{ p.profile }}">TTU faculty page</a></dd>{% endif %}
+        </dl>
+      </div>
+    </div>
+    {% if p.experience %}
+    <div class="cv">
+      <div class="cv-col">
+        <h4>Professional Experience</h4>
+        <ol class="timeline">
+          {% for x in p.experience %}
+          <li class="t-{{ x.type }}">
+            <span class="yrs">{{ x.years }}</span>
+            <div><strong>{{ x.role }}</strong>{% if x.type == "postdoc" %}<span class="kind">Postdoc</span>{% elsif x.type == "industry" %}<span class="kind">Industry</span>{% endif %}<br><span class="place">{{ x.place }}</span></div>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+      <div class="cv-col">
+        {% if p.teaching %}
+        <h4>Teaching</h4>
+        <ul class="plain">{% for t in p.teaching %}<li>{{ t }}</li>{% endfor %}</ul>
+        {% if p.courses.size > 0 %}<ul class="plain">{% for c in p.courses %}<li><strong>{{ c.code }}</strong> {{ c.name }}</li>{% endfor %}</ul>{% endif %}
+        {% endif %}
+        {% if p.awards %}
+        <h4>Honors &amp; Awards</h4>
+        <ul class="plain">{% for a in p.awards %}<li>{{ a }}</li>{% endfor %}</ul>
+        {% endif %}
+        {% if p.service %}
+        <h4>Professional Service</h4>
+        <ul class="plain">{% for a in p.service %}<li>{{ a }}</li>{% endfor %}</ul>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>
+
+{% assign groups = "phd:PhD Students,ms:MS Students,undergrad:Undergraduate Researchers,alumni:Alumni" | split: "," %}
+{% for g in groups %}
+  {% assign parts = g | split: ":" %}
+  {% assign people = members | where: "group", parts[0] %}
+  {% if people.size > 0 %}
+  <section>
+    <h2 class="sec-h">{{ parts[1] }}</h2>
+    <div class="members">
+      {% for m in people %}
+      <article class="card member">
+        <div class="avatar">{% if m.photo %}<img src="{% if m.photo contains '/' %}{{ m.photo | relative_url }}{% else %}{{ '/assets/img/people/' | append: m.photo | relative_url }}{% endif %}" alt="{{ m.name }}">{% else %}<span aria-hidden="true">{{ m.initials }}</span>{% endif %}</div>
+        <div class="info">
+          <h3>{{ m.name }}</h3>
+          {% if m.title %}<span class="role">{{ m.title }}</span>{% endif %}
+          {% if m.topic %}<span class="topic-text">{{ m.topic }}</span>{% endif %}
+          {% if m.room or m.phone or m.email %}<span class="muted">{% if m.room %}{{ m.room }}{% endif %}{% if m.room and m.phone %} · {% endif %}{% if m.phone %}<span style="white-space:nowrap">{{ m.phone }}</span>{% endif %}{% if m.email %}<br><a href="mailto:{{ m.email }}">{{ m.email }}</a>{% endif %}</span>{% endif %}
+          {% if m.website or m.scholar or m.linkedin %}<span class="links">{% if m.website %}<a href="{{ m.website }}">Website</a>{% endif %}{% if m.scholar %}<a href="{{ m.scholar }}">Google Scholar</a>{% endif %}{% if m.linkedin %}<a href="{{ m.linkedin }}">LinkedIn</a>{% endif %}</span>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+{% endfor %}

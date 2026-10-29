@@ -1,0 +1,68 @@
+# Site settings for the Advanced Semiconductor Device Laboratory website.
+# After changing this file, GitHub rebuilds the site automatically.
+
+title: Advanced Semiconductor Device Laboratory
+short_name: ASDL
+description: >-
+  The Advanced Semiconductor Device Laboratory at Texas Tech University studies
+  GaN and InGaAs high electron mobility transistors: reliability, radiation
+  effects, cryogenic operation and compact modeling.
+
+# Repository is named "asdl", so the site lives at https://<account>.github.io/asdl/ .
+# If you name the repository <account>.github.io instead, set baseurl to "".
+# (Old note:) If the repository is named <username>.github.io, leave baseurl empty ("").
+# If it has any other name (for example "asdl"), set baseurl to "/asdl".
+baseurl: "/asdl"
+url: ""
+
+department: Department of Electrical & Computer Engineering
+department_url: https://www.depts.ttu.edu/ece/
+college: Edward E. Whitacre Jr. College of Engineering
+college_url: https://www.depts.ttu.edu/coe/
+university_url: https://www.ttu.edu/
+gradschool_url: https://www.depts.ttu.edu/gradschool/
+
+location:
+  building: Electrical & Computer Engineering Building
+  room: Room 252
+  mailing:
+    - Department of Electrical & Computer Engineering
+    - Texas Tech University, Box 43102
+    - Lubbock, TX 79409-3102
+
+# Top navigation (red menu bar), in order. "url" is the page address.
+nav:
+  - title: Home
+    url: /
+  - title: Members
+    url: /members/
+  - title: Research
+    url: /research/
+  - title: Grants
+    url: /grants/
+  - title: Facility
+    url: /facility/
+  - title: Publications
+    url: /publications/
+  - title: News
+    url: /news/
+  - title: Gallery
+    url: /gallery/
+  - title: Positions
+    url: /positions/
+  - title: Contact
+    url: /contact/
+
+# Lab member profiles: one file per person in the _people folder.
+collections:
+  people:
+    output: false
+
+markdown: kramdown
+exclude:
+  - README.md
+  - HOW-TO-EDIT.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .pages.yml

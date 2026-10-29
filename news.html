@@ -1,0 +1,18 @@
+---
+layout: default
+title: News
+heading: News &amp; Updates
+permalink: /news/
+intro: Announcements, milestones and highlights from the Advanced Semiconductor Device Laboratory.
+description: News and updates from the Advanced Semiconductor Device Laboratory at Texas Tech University.
+---
+<div class="stack">
+  {% for n in site.data.news %}
+  <article class="card news-card">
+    <div class="news-meta">{{ n.date }}{% if n.tag %} · {{ n.tag }}{% endif %}</div>
+    <h3>{{ n.title | default: n.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</h3>
+    {% if n.summary %}<p>{{ n.summary }}</p>{% elsif n.title %}<p>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
+    {% if n.link %}<div><a href="{{ n.link }}">Read the full story →</a></div>{% endif %}
+  </article>
+  {% endfor %}
+</div>

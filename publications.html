@@ -1,0 +1,38 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+intro: Peer-reviewed articles, conference papers and presentations from the Advanced Semiconductor Device Laboratory.
+description: Journal papers, conference papers and posters from the Advanced Semiconductor Device Laboratory.
+---
+{% assign pubs = site.data.publications.list %}
+{% assign types = "Journal:J:Journal Articles,Conference:C:Conference Papers,Poster:P:Posters & Presentations,Book Chapter:B:Book Chapters,Patent:PT:Patents,Thesis:T:Theses" | split: "," %}
+
+<nav class="chips" aria-label="Publication types">
+  {% for t in types %}{% assign tp = t | split: ":" %}{% assign n = pubs | where: "type", tp[0] %}{% if n.size > 0 %}<a class="chip" href="#{{ tp[1] | downcase }}">{{ tp[2] }}</a>{% endif %}{% endfor %}
+</nav>
+
+{% for t in types %}
+  {% assign tp = t | split: ":" %}
+  {% assign list = pubs | where: "type", tp[0] %}
+  {% if list.size > 0 %}
+  <section class="card" id="{{ tp[1] | downcase }}">
+    <h2 class="sec-h">{{ tp[2] }}</h2>
+    <ol class="pubs">
+      {% for pub in list %}
+      {% assign authors = pub.authors %}
+      {% for h in site.data.publications.highlight %}
+        {% capture bold %}<b>{{ h }}</b>{% endcapture %}
+        {% assign authors = authors | replace: h, bold %}
+      {% endfor %}
+      <li>
+        <span class="num">[{{ tp[1] }}.{{ list.size | minus: forloop.index0 }}]</span>
+        <div>{{ authors }}, “{% if pub.link %}<a class="t" href="{{ pub.link }}">{{ pub.title }}</a>{% else %}<span class="t">{{ pub.title }}</span>{% endif %},” {% if pub.venue %}<em>{{ pub.venue }}</em>, {% endif %}{{ pub.year }}.</div>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+{% endfor %}
+
+<p class="muted" style="text-align:center">For a full list of Dr. Kim's publications, see his <a href="https://www.depts.ttu.edu/ece/faculty/taewoo_kim/Kim_CV_2024.pdf">curriculum vitae</a>.</p>

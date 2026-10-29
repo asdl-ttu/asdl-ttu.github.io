@@ -1,0 +1,30 @@
+---
+layout: default
+title: Facility
+heading: Facility &amp; Equipment
+permalink: /facility/
+intro: The lab measures transistors on-wafer from liquid-helium temperature upward, and models them with industry-standard EDA tools.
+description: Measurement and modeling capabilities of the Advanced Semiconductor Device Laboratory, including cryogenic probing to 4 K and 67 GHz RF.
+---
+{% assign icons = site.data.icons %}
+<section class="card about" aria-labelledby="env-h">
+  <div class="prose">
+    <h2 class="sec-h" id="env-h">Temperature Range</h2>
+    <p class="lede">Our setups together cover 4 K to 1000 K, from liquid-helium cryogenics to high-temperature operation. Each measurement method has its own usable window within that range.</p>
+  </div>
+  {% include temperature-span.html %}
+</section>
+
+<section aria-labelledby="eq-h">
+  <h2 class="sec-h" id="eq-h">Instruments &amp; Tools</h2>
+  <div class="grid3">
+    {% for f in site.data.facilities %}
+    <article class="card topic">
+      <span class="icon">{{ icons[f.icon] | default: icons.chip }}</span>
+      <h3>{{ f.capability }}</h3>
+      <p>{{ f.use }}</p>
+      <div class="spec">{{ f.range }}</div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

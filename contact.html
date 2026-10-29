@@ -1,0 +1,24 @@
+---
+layout: default
+title: Contact
+heading: Contact &amp; Location
+permalink: /contact/
+description: Contact information and mailing address for the Advanced Semiconductor Device Laboratory at Texas Tech University.
+---
+{% assign pi = site.people | where: "group", "pi" | first %}
+<div class="grid3">
+  <section class="card prose">
+    <h2 class="sec-h">Principal Investigator</h2>
+    <p><strong>{{ pi.name }}</strong>{% if pi.office %}<br>Office {{ pi.office }}{% endif %}</p>
+    {% if pi.email %}<div class="copyrow"><code id="em">{{ pi.email }}</code><button type="button" data-copy="em">Copy</button></div>{% endif %}
+    {% if pi.phone %}<div class="copyrow"><code id="ph">{{ pi.phone }}</code><button type="button" data-copy="ph">Copy</button></div>{% endif %}
+  </section>
+  <section class="card prose">
+    <h2 class="sec-h">Lab</h2>
+    <p><strong>{{ site.short_name }}, {{ site.location.room }}</strong><br>{{ site.location.building | escape }}<br>Texas Tech University<br>Lubbock, TX 79409</p>
+  </section>
+  <section class="card prose">
+    <h2 class="sec-h">Mailing Address</h2>
+    <p>{{ site.title }}<br>{% for line in site.location.mailing %}{{ line | escape }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}</p>
+  </section>
+</div>

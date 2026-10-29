@@ -1,0 +1,23 @@
+---
+layout: default
+title: Gallery
+permalink: /gallery/
+intro: Our lab, our instruments and our team at work.
+description: Photos from the Advanced Semiconductor Device Laboratory at Texas Tech University.
+---
+{% if site.data.gallery.size > 0 %}
+<div class="gallery">
+  {% for g in site.data.gallery %}
+  <figure class="card">
+    <img src="{% if g.file contains '/' %}{{ g.file | relative_url }}{% else %}{{ '/assets/img/gallery/' | append: g.file | relative_url }}{% endif %}" alt="{{ g.caption | escape }}" loading="lazy">
+    <figcaption>{{ g.caption }}{% if g.date %} <span class="muted">· {{ g.date }}</span>{% endif %}</figcaption>
+  </figure>
+  {% endfor %}
+</div>
+{% else %}
+<div class="card empty">
+  <span class="icon">{{ site.data.icons.chip }}</span>
+  <h2 style="font-size:1.4rem">Photos Coming Soon</h2>
+  <p class="muted" style="text-align:center">Lab, equipment and conference photos will appear here.</p>
+</div>
+{% endif %}

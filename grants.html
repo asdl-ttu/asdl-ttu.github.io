@@ -1,0 +1,23 @@
+---
+layout: default
+title: Grants
+heading: Research Funding
+permalink: /grants/
+intro: Sponsored research that supports the Advanced Semiconductor Device Laboratory.
+description: Research grants and funding of the Advanced Semiconductor Device Laboratory at Texas Tech University.
+---
+<div class="stack">
+  {% for g in site.data.grants %}
+  <article class="card grant">
+    <div><div class="amount">{{ g.amount }}</div><div class="muted">{{ g.year }}</div></div>
+    <div class="prose">
+      <div class="news-meta">{{ g.agency }}{% if g.status %}<span class="status">{{ g.status }}</span>{% endif %}</div>
+      <h3 style="font-size:1.35rem">{{ g.title }}</h3>
+      {% if g.investigators %}<div><strong>Investigators:</strong> {{ g.investigators }}</div>{% endif %}
+      {% if g.partners %}<div><strong>Partners:</strong> {{ g.partners }}</div>{% endif %}
+      {% if g.summary %}<p>{{ g.summary }}</p>{% endif %}
+      {% if g.link %}<div class="foot-row"><a class="btn line" href="{{ g.link }}">Read the announcement →</a></div>{% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>

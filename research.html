@@ -1,0 +1,74 @@
+---
+layout: default
+title: Research
+permalink: /research/
+intro: >-
+  We study how carrier transport, trapping and self-heating govern the performance and stability of GaN and InGaAs
+  high electron mobility transistors. We measure real devices from cryogenic to high temperature, extract physical
+  parameters, and turn them into compact models that circuit designers can use.
+description: Research at the Advanced Semiconductor Device Laboratory — carrier transport, trapping, dynamic on-resistance, low-frequency noise, radiation effects and compact modeling of GaN and InGaAs HEMTs from 4 K to 1000 K.
+---
+{% assign icons = site.data.icons %}
+<section class="card" aria-labelledby="flow-h">
+  <h2 class="sec-h" id="flow-h">How We Work</h2>
+  <ol class="flow">
+    <li><strong>Measure</strong><span>DC, pulsed, noise and RF data versus bias and temperature</span></li>
+    <li><strong>Extract</strong><span>Mobility, knee sharpness (γ), v<sub>sat</sub>, trap kinetics, parasitics</span></li>
+    <li><strong>Validate</strong><span>Check extracted parameters on independent bias and temperature data</span></li>
+    <li><strong>Compact Modeling</strong><span>Small-signal circuits and ASM-HEMT compact models in IC-CAP</span></li>
+  </ol>
+</section>
+
+<section aria-labelledby="areas-h">
+<h2 class="sec-h" id="areas-h">Research Areas</h2>
+<div class="grid2">
+  <article class="card topic" id="transport">
+    <span class="icon">{{ icons.transport }}</span>
+    <h3>Carrier Transport from 4 K to High Temperature</h3>
+  <p>We extract low-field mobility, the knee-sharpness parameter (γ) and saturation velocity (v<sub>sat</sub>) from temperature-dependent output, transfer and transconductance data. Transfer-length (TLM) structures separate sheet and contact resistance, and gate-length scaling separates channel transport from access-resistance and high-field velocity effects.</p>
+  <p>This lets us follow the transition from impurity-limited to phonon-limited transport, and compare devices with and without an AlGaN back barrier.</p>
+  </article>
+  <article class="card topic" id="trapping">
+    <span class="icon">{{ icons.traps }}</span>
+    <h3>Trapping, Current Collapse and Dynamic On-Resistance</h3>
+  <p>Traps at the surface, in the AlGaN barrier and in the buffer make a GaN HEMT's current depend on how it was biased before. We use isothermal current-mode DLTS (I-DLTS) to measure capture and emission kinetics and post-stress recovery across temperature.</p>
+  <p>High-voltage pulsed I–V lets us vary pulse width, duty cycle and quiescent bias to measure dynamic R<sub>on</sub>, threshold-voltage shift and knee walk-out, and to separate self-heating from trapping.</p>
+  </article>
+  <article class="card topic" id="noise">
+    <span class="icon">{{ icons.noise }}</span>
+    <h3>Low-Frequency Noise and Trap Spectroscopy</h3>
+  <p>We measure 1/f and generation–recombination (G–R) noise from 4 K to 600 K. Gate-referred noise, S<sub>VG</sub> = S<sub>ID</sub>/g<sub>m</sub><sup>2</sup>, separates intrinsic trap fluctuations from the strong temperature dependence of transconductance. Arrhenius analysis of G–R corner frequencies gives trap activation energies.</p>
+  <p>Gate-current noise and gate–drain noise correlation feed the noise models used for minimum noise figure in low-noise amplifiers.</p>
+  </article>
+  <article class="card topic" id="gate-leakage">
+    <span class="icon">{{ icons.gate }}</span>
+    <h3>Gate Leakage and Impact Ionization</h3>
+  <p>By fitting and removing Schottky gate leakage, we isolate the hole current that impact ionization near the drain sends to the gate. Mapping where it appears in bias tells compact gate-current and noise models where they need an impact-ionization term.</p>
+  </article>
+  <article class="card topic" id="radiation">
+    <span class="icon">{{ icons.radiation }}</span>
+    <h3>Radiation Effects</h3>
+  <p>We irradiate AlGaN/GaN HEMTs with protons at different energies and fluences and measure the change in transport and trap behavior. The goal is to predict device lifetime in space and other high-radiation environments.</p>
+  </article>
+  <article class="card topic" id="cryogenic">
+    <span class="icon">{{ icons.cryo }}</span>
+    <h3>InGaAs HEMTs for Cryogenic Electronics</h3>
+  <p>Cryogenic low-noise amplifiers are a key part of superconducting qubit readout and deep-space receivers. We study how InGaAs HEMT transport, noise and parasitics change as devices cool toward 4 K.</p>
+  </article>
+  <article class="card topic" id="modeling" style="grid-column:1/-1">
+    <span class="icon">{{ icons.model }}</span>
+    <h3>RF Characterization and Compact Modeling</h3>
+  <p>We measure calibrated S-parameters up to 67 GHz versus bias and temperature, de-embed pad and fixture parasitics, and extract small-signal equivalent circuits (g<sub>m</sub>, intrinsic capacitances, R<sub>g</sub>, R<sub>d</sub>, R<sub>s</sub>). In Keysight IC-CAP we fit ASM-HEMT models to DC, pulsed and small-signal data, using the extracted transport parameters as physical constraints and reporting each model's range of validity.</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Extraction setup</th><th>Measured data</th></tr></thead>
+    <tbody>
+      <tr><td class="m">DC_MODELING / _TEMP</td><td>Output and transfer I–V across temperature</td></tr>
+      <tr><td class="m">DC_PULSED</td><td>Pulsed I–V for trapping and self-heating</td></tr>
+      <tr><td class="m">CV_MODELING</td><td>Gate capacitance vs. bias</td></tr>
+      <tr><td class="m">CONTACT_RESISTANCES</td><td>Access and contact resistance</td></tr>
+      <tr><td class="m">SPAR_MODELING</td><td>Multi-bias S-parameters for small-signal model</td></tr>
+    </tbody>
+  </table></div>
+  </article>
+</div>
+</section>
