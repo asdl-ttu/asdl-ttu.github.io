@@ -23,6 +23,7 @@ description: Principal investigator, graduate students and alumni of the Advance
           {% for ed in p.education %}<dt>{{ ed.degree }}</dt><dd>{{ ed.detail }}</dd>{% endfor %}
           {% if p.office %}<dt>Office</dt><dd>{{ p.office }}</dd>{% endif %}
           {% if p.email %}<dt>Email</dt><dd><a href="mailto:{{ p.email }}">{{ p.email }}</a></dd>{% endif %}
+          {% if p.scholar %}<dt>Scholar</dt><dd><a href="{{ p.scholar }}">Google Scholar</a></dd>{% endif %}
           {% if p.profile %}<dt>Profile</dt><dd><a href="{{ p.profile }}">TTU faculty page</a></dd>{% endif %}
         </dl>
       </div>
