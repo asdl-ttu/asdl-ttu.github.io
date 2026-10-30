@@ -5,8 +5,8 @@ title: Advanced Semiconductor Device Laboratory
 short_name: ASDL
 description: >-
   The Advanced Semiconductor Device Laboratory at Texas Tech University studies
-  GaN and InGaAs high electron mobility transistors: reliability, radiation
-  effects, cryogenic operation and compact modeling.
+  Wide-Bandgap Semiconductor Devices and High Electron Mobility Transistors
+  (HEMTs): reliability, radiation effects, cryogenic operation and compact modeling.
 
 # Repository is named "asdl", so the site lives at https://<account>.github.io/asdl/ .
 # If you name the repository <account>.github.io instead, set baseurl to "".
