@@ -5,7 +5,7 @@ group: pi
 order: 10
 photo: /assets/img/people/taewoo-kim.jpg
 title: Assistant Professor, Department of Electrical & Computer Engineering
-bio: Research in InGaAs HEMTs for cryogenic electronics and the reliability of GaN-based high electron mobility transistors.
+bio: Research in Wide-Bandgap Semiconductor Devices, including the reliability of GaN-based High Electron Mobility Transistors (HEMTs) and InGaAs HEMTs for cryogenic electronics.
 phone: 806.834.5545
 email: taewoo.kim@ttu.edu
 office: ECE 236
