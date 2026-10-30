@@ -76,6 +76,7 @@ description: Principal investigator, graduate students and alumni of the Advance
         <div class="info">
           <h3>{{ m.name }}</h3>
           {% if m.title %}<span class="role">{{ m.title }}</span>{% endif %}
+          {% if m.degree %}<span class="degree"><strong>Education:</strong> {{ m.degree }}</span>{% endif %}
           {% if m.topic %}<span class="topic-text">{{ m.topic }}</span>{% endif %}
           {% if m.room or m.phone or m.email %}<span class="muted">{% if m.room %}{{ m.room }}{% endif %}{% if m.room and m.phone %} · {% endif %}{% if m.phone %}<span style="white-space:nowrap">{{ m.phone }}</span>{% endif %}{% if m.email %}<br><a href="mailto:{{ m.email }}">{{ m.email }}</a>{% endif %}</span>{% endif %}
           {% if m.website or m.scholar or m.linkedin %}<span class="links">{% if m.website %}<a href="{{ m.website }}">Website</a>{% endif %}{% if m.scholar %}<a href="{{ m.scholar }}">Google Scholar</a>{% endif %}{% if m.linkedin %}<a href="{{ m.linkedin }}">LinkedIn</a>{% endif %}</span>{% endif %}
