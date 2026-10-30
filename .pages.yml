@@ -57,6 +57,9 @@ content:
         label: Title / position
         type: string
         description: e.g. Graduate Research Assistant, Electrical Engineering (PhD)
+      - name: degree
+        label: Degree (e.g. B.Sc. EEE, BUET)
+        type: string
       - name: topic
         label: Research topic
         type: text
