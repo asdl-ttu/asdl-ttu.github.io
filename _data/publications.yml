@@ -38,7 +38,6 @@ list:
     venue: Poster Presentation
     year: 2026
     type: Poster
-    link: /assets/docs/ray-2026-decoupled-transport-poster.pdf
 
   - title: Energy- and Fluence-Dependent Proton Irradiation Effects on Carrier Transport and Trap Dynamics in AlGaN/GaN HEMTs
     authors: A. Ray, E. Sadiq, P. Biswas, T. Kim
