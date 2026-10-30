@@ -10,4 +10,5 @@ website: https://promitbiswas.com/
 linkedin: https://www.linkedin.com/in/promit-biswas177/
 room: ASDL, Room 252
 phone: +1 347 544 6792
+email: prombisw@ttu.edu
 ---
