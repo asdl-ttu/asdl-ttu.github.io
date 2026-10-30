@@ -8,17 +8,40 @@
 highlight:
   - A. Ray
   - E. Sadiq
+  - I. Song
+  - P. Biswas
   - T. Kim
 
 list:
   - title: Temperature-Driven Transition From Persistent Trapping to Thermally Enhanced Recovery in GaN HEMTs From 4 to 600 K
-    authors: A. Ray, …, T. Kim
+    authors: A. Ray, I. Song, …, T. Kim
     venue: IEEE Electron Device Letters (accepted, Oct. 2026)
     year: 2026
     type: Journal
 
+  - title: Mitigating Charge Trapping and Enhancing RF Performance in AlGaN/GaN HEMTs via Back-Barrier Engineering
+    authors: W. Amir, A. Ray, J.-H. Yeom, T. Hoshi, H.-M. Kwon, T. Kim
+    venue: Materials Science in Semiconductor Processing, vol. 215, Art. no. 111022
+    year: 2026
+    type: Journal
+    link: https://doi.org/10.1016/j.mssp.2026.111022
+
+  - title: Comparative RF De-Embedding of HEMTs Using Cold-FET vs Open-Short Techniques
+    authors: S. Chakraborty, J.-H. Lee, A. Ray, H.-M. Kwon, T. Kim
+    venue: Materials Science in Semiconductor Processing, vol. 212, Art. no. 110753
+    year: 2026
+    type: Journal
+    link: https://doi.org/10.1016/j.mssp.2026.110753
+
+  - title: Decoupled Extraction of High-Field Transport Parameters in AlGaN/GaN HEMTs for High-Frequency Power Applications
+    authors: A. Ray, I. Song, K. McAtee, T. Kim
+    venue: Poster Presentation
+    year: 2026
+    type: Poster
+    link: /assets/docs/ray-2026-decoupled-transport-poster.pdf
+
   - title: Energy- and Fluence-Dependent Proton Irradiation Effects on Carrier Transport and Trap Dynamics in AlGaN/GaN HEMTs
-    authors: A. Ray, E. Sadiq, Biswas, T. Kim
+    authors: A. Ray, E. Sadiq, P. Biswas, T. Kim
     venue: Center for Integrated Nanotechnologies (CINT), NSF-supported
     year: 2026
     type: Poster
